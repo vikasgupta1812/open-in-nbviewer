@@ -11,7 +11,7 @@ if (gist_re.test(loc)) {
     url = url_root + gist[1];
 } else if (github_re.test(loc)) {
     path = github_re.exec(loc);
-    url = url_root + 'urls/raw.' + path[1] + path[2];
+    url = url_root + path[1] + path[2];
 } else if (https_re.test(loc)) {
     path = https_re.exec(loc);
     url = url_root + 'urls/' + path[1];
