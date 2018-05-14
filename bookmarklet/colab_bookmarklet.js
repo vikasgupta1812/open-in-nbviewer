@@ -1,8 +1,8 @@
 javascript:date = new Date();
-url_root = 'http://nbviewer.ipython.org/';
+url_root = 'https://colab.research.google.com/';
 url = null;
 gist_re = /^https?:\/\/gist\.github\.com\/(?:\w+\/)?([a-f0-9]+)$/;
-github_re = /^https:\/\/(github\.com\/.*\/)blob\/(.*\.ipynb)$/;
+github_re = /^https:\/\/(github)\.com(\/.*\.ipynb)$/;
 https_re = /^https:\/\/(.*\.ipynb)$/;
 http_re = /^http:\/\/(.*\.ipynb)$/;
 loc = location.href;
@@ -18,4 +18,4 @@ if (gist_re.test(loc)) {
 } else if (http_re.test(loc)) {
     path = http_re.exec(loc);
     url = url_root + 'url/' + path[1];}
-if (url) {void(window.open(url, 'nbviewer' + date.getTime()));}
+if (url) {void(window.open(url, 'colab' + date.getTime()));}
